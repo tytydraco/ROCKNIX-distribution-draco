@@ -1,0 +1,11 @@
+--- a/block/elevator.c	2026-05-01 22:10:41.423829505 -0500
++++ b/block/elevator.c	2026-05-01 22:10:41.423829505 -0500
+@@ -729,7 +729,7 @@
+ void elevator_set_default(struct request_queue *q)
+ {
+ 	struct elv_change_ctx ctx = {
+-		.name = "mq-deadline",
++		.name = "bfq",
+ 		.no_uevent = true,
+ 	};
+ 	int err;

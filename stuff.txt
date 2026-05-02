@@ -1,0 +1,2 @@
+docker run --rm --log-driver none   -v "$(pwd)":/build -w /build -it   -e PROJECT=ROCKNIX -e DEVICE=H700 -e ARCH=aarch64   rocknix-build bash -lc 'PROJECT=ROCKNIX DEVICE=H700 ARCH=aarch64 ./scripts/build linux'
+docker run --rm --log-driver none   -v "$(pwd)":/build -w /build -it   -e PROJECT=ROCKNIX -e DEVICE=H700 -e ARCH=aarch64   rocknix-build bash -lc './scripts/build toolchain && make kconfig-menuconfig-H700'
