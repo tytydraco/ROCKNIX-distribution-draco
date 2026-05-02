@@ -148,6 +148,10 @@
 # swap support enabled per default (yes / no)
   SWAP_ENABLED_DEFAULT="yes"
 
+# baked into /etc/swap.conf for rocknix-memory-manager: enable script sysctl/THP/swappiness (yes/no).
+# Default no — tune vm via sysctl.d; zram/swap setup, hybrid zram sysfs, KSM, and --optimize compaction still run.
+  ENABLE_VM_TUNING="no"
+
 # swap size if SWAP_SUPPORT=yes in MB
   SWAPSIZE="384"
 
