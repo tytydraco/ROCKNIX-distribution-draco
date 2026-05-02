@@ -290,8 +290,11 @@ suspend() {
   ${DEBUG} && log $0 "Shutdown delay - ${DELAY} seconds"
   [[ ${CHARGING} -eq 0 ]] && ${DEBUG} && log $0 "Charging ..."
 
-  if [[ "${DELAY}" -gt 0 || ${CHARGING} -eq 0 ]]; then
-    do_suspend_actions
+  do_suspend_actions
+
+  if [[ "${DELAY}" -eq 0 ]]; then
+    ${DEBUG} && log $0 "Shutdown delay is 0 - auto-shutdown disabled (resume will clear flags)"
+    return 0
   fi
 
   # Delay shutdown
