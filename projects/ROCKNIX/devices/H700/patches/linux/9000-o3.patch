@@ -1,0 +1,24 @@
+--- a/init/Kconfig	2026-05-01 22:08:25.577202455 -0500
++++ b/init/Kconfig	2026-05-01 22:08:25.577202455 -0500
+@@ -1575,6 +1575,13 @@
+ 	prompt "Compiler optimization level"
+ 	default CC_OPTIMIZE_FOR_PERFORMANCE
+ 
++config CC_OPTIMIZE_FOR_PERFORMANCE_O3
++	bool "Optimize for performance (-O3)"
++	help
++	  This is the default optimization level for the kernel, building
++	  with the "-O3" compiler flag for best performance and most
++	  helpful compile-time warnings.
++
+ config CC_OPTIMIZE_FOR_PERFORMANCE
+ 	bool "Optimize for performance (-O2)"
+ 	help
+@@ -1672,7 +1679,6 @@
+ menuconfig EXPERT
+ 	bool "Configure standard kernel features (expert users)"
+ 	# Unhide debug options, to make the on-by-default options visible
+-	select DEBUG_KERNEL
+ 	help
+ 	  This option allows certain base kernel options and settings
+ 	  to be disabled or tweaked. This is for specialized
