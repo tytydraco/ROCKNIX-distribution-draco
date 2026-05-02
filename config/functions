@@ -329,7 +329,7 @@ setup_toolchain() {
       TARGET_CXXFLAGS+=" $CXXFLAGS_OPTIM_DEBUG"
       TARGET_LDFLAGS+=" $LDFLAGS_OPTIM_DEBUG"
     fi
-  elif flag_enabled "speed" "no"; then
+  elif flag_enabled "speed" "yes"; then
     TARGET_CFLAGS+=" $CFLAGS_OPTIM_SPEED"
     TARGET_CXXFLAGS+=" $CXXFLAGS_OPTIM_SPEED"
   elif flag_enabled "size" "no"; then
