@@ -24,3 +24,15 @@ makekernel() {
 makefull() {
     indocker "make H700"
 }
+
+clean() {
+    indocker "make distclean"
+}
+
+saveconfig() {
+    cp projects/ROCKNIX/devices/H700/linux/linux.aarch64.conf ../linux.aarch64.conf
+}
+
+update() {
+    git pull --rebase
+}
