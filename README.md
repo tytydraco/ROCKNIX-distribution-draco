@@ -4,6 +4,28 @@
 
 ROCKNIX is an immutable Linux distribution for handheld gaming devices developed by a small community of enthusiasts.  Our goal is to produce an operating system that has the features and capabilities that we need, and to have fun as we develop it.
 
+## Draco modifications
+* Fully tickless kernel (pinning on CPU0 and RCU0)
+* Realtime kernel (fully preemptable)
+* Reduced kernel debugging / stat tracking / profiling
+* RCU boosting
+* LZ4 ramdisk
+* -O3 GCC compiler optimization (kernel and full system)
+* 1000HZ scheduler
+* VM optimizations
+* ZSWAP support with LZ4
+* Compile in kernel modules (other than out of tree)
+* Removed unnecessary kernel drivers
+* LZ4 compressed ZRAM by default
+* More USB wireless drivers
+* Disable watchdog entirely
+* Disable DEBUGFS
+* Default to BFQ IO scheduler
+* Disable ROCKNIX VM userspace tweaks (togglable)
+* Disable KSM
+* Additional sysctl optimizations
+* Allow disabling auto-shutdown in userspace
+
 ## Features
 
 * ROCKNIX has a very active community of developers and users.
